@@ -1,0 +1,73 @@
+.overlay {
+  padding:  40px 0;
+  background-color: aqua;
+}
+
+.navigation {
+  margin-bottom: 54px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+
+  .logo-name {
+      @media screen and (max-width: ($tablet - 1)) {
+        display: none;
+      }
+      @media screen and (min-width: $tablet) {
+        display: block;
+        margin-left: 8px;
+      }
+      @media screen and (min-width: $desktop) {
+        display: block;
+        margin-left: 10px;
+      }
+      font-style: normal;
+      @include font(500, 30px, 1.17);
+      color: $secondary-color;
+    }
+}
+
+.pages {
+  display: flex;
+
+  .page:not(:last-child) {
+      margin-right: 40px;
+    }
+
+  .page-link {
+    font-style: normal;
+    @include font(500, 12px, 1.17);
+    color: $secondary-color;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+  }
+
+  .page-link--current-page {
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: $accent-color;
+    }
+  }
+}

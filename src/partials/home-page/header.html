@@ -1,0 +1,36 @@
+<header class="overlay header-home-bgi">
+  <div class="container header-container">
+    <nav class="navigation">
+      <a class="logo-container logo" href="/src/index.html">
+        <svg class="icon-logo" width="24" height="24">
+          <use href="/src/images/icons.svg#icon-logo"></use>
+        </svg>
+        <span class="logo-name">Filmoteka</span>
+      </a>
+      <ul class="pages">
+        <li class="page">
+          <a href="/src/index.html" class="page-link page-link--current-page"
+            >home</a>
+        </li>
+        <li class="page">
+          <a href="/src/library.html" class="page-link js-library">my library</a>
+        </li>
+      </ul>
+    </nav>
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Search movies"
+        class="search-field"
+      />
+      <button type="submit" class="search-btn">
+        <svg class="search-icon" width="12" height="12">
+          <use href="/src/images/header-home-page/sprite.svg#icon-search"></use>
+        </svg>
+      </button>
+    </form>
+    <include src="./partials/utils/switch-theme.html"></include>
+  </div>
+</header>

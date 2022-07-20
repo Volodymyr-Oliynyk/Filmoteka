@@ -1,0 +1,372 @@
+.modal-is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-is-open .modal-movie-overlay {
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 5px, rgba(0, 0, 0, 0.1) -1px -1px 5px,
+    rgba(0, 0, 0, 0.1) -1px 1px 5px, rgba(0, 0, 0, 0.1) 1px -1px 5px;
+  padding: 20px 15px;
+  background: linear-gradient(rgba(17, 17, 18, 0.4), rgba(12, 12, 14, 0.4));
+  @media screen and (max-width: 767px) {
+    overflow: avto;
+  }
+}
+
+.modal-info {
+  display: flex;
+  @media screen and (max-width: 767px) {
+    display: block;
+    height: 100%;
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
+}
+
+.modal-movie-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid $secondary-color;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 5px, rgba(0, 0, 0, 0.1) -1px -1px 5px,
+    rgba(0, 0, 0, 0.1) -1px 1px 5px, rgba(0, 0, 0, 0.1) 1px -1px 5px;
+  padding: 20px 15px;
+  // background-color: $secondary-color;
+  background-image: url('../images/body/main-bgi-light.jpg');
+  @media screen and (max-width: 767px) {
+    max-width: 400px;
+    overflow: auto;
+    height: 100%;
+  }
+  @media screen and (min-width: $tablet) {
+    display: block;
+    width: 704px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 814px;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.modal-movie-poster {
+  width: avto;
+  height: auto;
+  border-radius: 5px;
+  position: relative;  
+  @extend %flex-center-style;
+  @media screen and (max-width: 767px) {
+    width: 280px;
+    height: avto;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 264px;
+    height: 374px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 375px;
+    height: auto;
+  }
+}
+
+.modal-movie-information {
+  // background-color: $secondary-color;
+  @media screen and (max-width: 767px) {
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-left: 32px;
+    margin-right: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 375px;
+    height: auto;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+.modal-movie-title {
+  font-family: $primary-font;
+  font-size: 20px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  @media screen and (max-width: 767px) {
+    font-family: $primary-font;
+    font-style: normal;
+    text-transform: uppercase;
+    @include font(500, 20px, 1.15);
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 30px;
+    line-height: 1.16;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.modal-movie-data {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.modal-movie-item {
+  display: flex;
+  margin-top: 10px;
+}
+
+.modal-movie-info {
+  margin-top: 20px;
+  margin-left: 39px;
+}
+
+.modal-movie-data-name {
+  font-family: $primary-font;
+  width: 69px;
+  margin-right: 30px;
+  color: $primary-color;
+  font-style: normal;
+  @include font(500, 12px, 1.33);
+}
+
+.modal-movie-data-slash {
+  color: $primary-color;
+}
+
+.modal-movie-description {
+  line-height: 1.16;
+  margin-top: 0;
+  font-family: $primary-font;
+  font-style: normal;
+  color: $primary-color;
+  @include font(500, 12px, 1.16);
+}
+
+.modal-movie-popularity {
+  margin-bottom: 9px;
+  margin-top: 0;
+  font-family: $primary-font;
+  font-style: normal;
+  @include font(500, 12px, 1.16);
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 8px;
+  }
+}
+
+.modal-movie-description-title {
+  text-transform: uppercase;
+  color: $primary-color;
+  font-family: $primary-font;
+  font-style: normal;
+  @include font(500, 12px, 1.33);
+  @media screen and (max-width: 767px) {
+    margin-bottom: 6px;
+  }
+}
+
+.modal-movie-description-vote {
+  display: inline-block;
+  width: 36px;
+  height: 16px;
+  padding-top: 2px;
+  text-align: center;
+  color: $secondary-color;
+  background-color: $accent-color;
+  border-radius: 5px;
+}
+.modal-movie-description-votes {
+  font-family: $primary-font;
+  font-style: normal;
+  @include font(500, 12px, 1.16);
+  color: $primary-color;
+}
+
+.modal-movie-genre-name {
+  font-family: $primary-font;
+  @include font(500, 12px, 1.33);
+  color: $primary-color;
+}
+
+.modal-movie-about {
+  @include font(500, 12px, 1.33);
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-family: $primary-font;
+  font-style: normal;
+  @include font(500, 12px, 1.33);
+  text-transform: uppercase;
+  color: $primary-color;
+}
+
+.modal-movie-descript {
+  font-family: $primary-font;
+  @include font(500, 12px, 1.67);
+  color: $primary-color;
+  margin-right: 0;
+  @media screen and (min-width: $tablet) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @media screen and (min-width: $desktop) {
+  }
+}
+
+.modal-movie-button-wrapper {
+  display: flex;
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: 20px;
+    margin-left: 8px;
+  }
+}
+
+.modal-movie-button {
+  cursor: pointer;
+  @include font(500, 12px, 1.33);
+  width: 136px;
+  height: 44px;
+  background: $secondary-color;
+  border-radius: 5px;
+  padding: 0 13px;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  font-family: $primary-font;
+}
+
+.modal-movie-trailer {
+  cursor: pointer;
+  @include font(500, 12px, 1.33);
+  width: 136px;
+  height: 44px;
+  background: $secondary-color;
+  border-radius: 5px;
+  padding: 0 13px;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  font-family: $primary-font;
+  &:focus,
+  &:hover {
+    border: none;
+    background-color: $accent-color;
+  }
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: 20px;
+    margin-left: 8px;
+  }
+}
+
+.buttonTrailer {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-watched-button {
+  @include transition (border-color);
+    @include transition (box-shadow);
+    @include transition (background-color);
+  border: none;
+  margin-right: 15px;
+  border-color: $secondary-color-shade-dark;
+  background-color: $secondary-color-shade-light;
+  box-shadow: 0px 4px 4px rgba($primary-color, 0.45);
+  &:hover {
+    border-color: $secondary-color-shade-dark;
+    background-color: $loader-box-background;
+    box-shadow: 0px 4px 4px rgba($primary-color, 0.45);
+  }
+}
+
+.modal-queue-button {
+  @include transition (border-color);
+    @include transition (box-shadow);
+    @include transition (background-color);
+  border: none;
+  border-color: $secondary-color-shade-dark;
+  background-color: $secondary-color-shade-light;
+  box-shadow: 0px 4px 4px rgba($primary-color, 0.45);
+  &:hover {
+    border-color: $secondary-color-shade-dark;
+    background-color: $loader-box-background;
+    box-shadow: 0px 4px 4px rgba($primary-color, 0.45);
+  }
+}
+
+.active {
+  @include transition (border-color);
+    @include transition (box-shadow);
+    @include transition (background-color);
+  background-color: $accent-color;
+  border: none;
+  box-shadow: 0 8px 18px rgba($accent-color, 0.75);
+  color: $secondary-color;
+  &:hover {
+    background-color: $accent-color-grey;
+    border: none;
+    box-shadow: 0 8px 18px rgba($secondary-color-shade-dark, 0.75);
+    color: $secondary-color;
+  }
+}
+
+.buttonYouTubeTrailer {
+  position: absolute;
+  top: 30px;
+  left: 300px;
+  width: 48px;
+  height: 36px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 14px 14px rgba($primary-color, 0.45);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  @extend %flex-center-style;
+  &:hover {
+    border: solid 1px $youtube-color-hover;
+  }
+  @media screen and (max-width: 767px) {
+    top: 25px;
+    left: 240px;
+  }
+  @media screen and (min-width: $tablet) {
+    top: 25px;
+    left: 200px;
+  }
+  @media screen and (min-width: $desktop) {
+    top: 30px;
+    left: 300px;
+  }
+}
+
+.bgButtom {
+  background-image: url('/src/images/modal-movie/YouTube-Icon.svg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  flex-direction: column;
+}

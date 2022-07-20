@@ -1,0 +1,237 @@
+body.light-theme {
+  background-color: $secondary-color;
+  background-image: url('../images/body/main-bgi-light.jpg');
+  color: $primary-color;
+  transition: 0.5s;
+}
+
+body.dark-theme {
+  background-color: $primary-color;
+  background-image: url('../images/body/main-bgi-dark.jpg');
+  color: $secondary-color;
+  transition: 0.5s;
+
+  & .movie-card__title {
+    color: $secondary-color-shade-light;
+  }
+
+  & .movie-card__brief {
+    color: $accent-color;
+  }
+
+  & .footer__text {
+    color: $secondary-color-shade-light;
+  }
+
+  & .footer__info {
+    color: $secondary-color-shade-light;
+  }
+
+  & .theme-switch__icon--accent1 {
+    fill: $accent-color-grey;
+    transition: 0.5s;
+  }
+
+  & .theme-switch__icon--accent2 {
+    fill: $accent-color;
+    transition: 0.5s;
+  }
+
+  & .modal-movie-info {
+    color: $primary-color;
+  }
+
+  & .modal-movie-title {
+    color: $primary-color;
+  }
+
+  & .modal-movie-descript {
+    color: $primary-color;
+  }
+
+  & .pagination-list span {
+    background-color: $secondary-color-shade-dark;
+    color: $secondary-color;
+
+    &:hover,
+    &:focus {
+      border-color: $secondary-color-shade-dark;
+      background-color: $accent-color;
+      color: $primary-color;
+      box-shadow: 0px 4px 4px rgba($primary-color, 0.25);
+    }
+
+    &:active {
+      background-color: #fff;
+    }
+    &.active {
+      background-color: $accent-color;
+      color: $secondary-color;
+      box-shadow: 0px 4px 4px rgba($primary-color, 0.25);
+    }
+  }
+
+  & .main-wrapper {
+    background-color: $primary-color;
+  }
+
+  & .login-form,
+  .signup-form,
+  .btn-rotate {
+    background-color: $accent-color-grey;
+    transition: 0.5s;
+  }
+
+  & .card .header {
+    color: $primary-color;
+  }
+
+  & .card .footer,
+  .btn-rotate {
+    color: $secondary-color;
+  }
+
+  & .modal-movie-wrapper {
+    background-color: $accent-color-grey;
+  }
+
+  & .footer {
+    background-color: $secondary-color-shade-dark;
+    transition: 0.5s;
+  }
+
+  & .loader-box__elem {
+    background-color: $dark-theme-background-color;
+  }
+}
+
+.toolbar {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  padding: revert;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.theme-switch__icon {
+  fill: $accent-color-grey;
+  color: currentColor;
+  height: 15px;
+  width: 15px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.toolbar__background {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 96px;
+  height: 32px;
+  border-radius: 50em;
+  padding: 3px 0;
+  z-index: 0;
+}
+
+.theme-switch__control {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 32px;
+  height: 16px;
+  border-radius: 50em;
+  padding: 3px 0;
+  z-index: 0;
+}
+
+.theme-switch__toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.theme-switch__track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: $accent-color;
+  border-radius: inherit;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.theme-switch__marker {
+  position: relative;
+  background-color: $secondary-color;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  transform: translateX(3px);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch__toggle:checked + .theme-switch__track {
+  background-color: #333;
+}
+
+.theme-switch__toggle:checked ~ .theme-switch__marker {
+  transform: translateX(17px);
+}
+
+.theme-switch__toggle:focus + .theme-switch__track,
+.theme-switch__toggle:active + .theme-switch__track {
+  box-shadow: 0 0 0 3px $accent-color;
+  transition: 0.5s;
+}
+
+.dark-theme {
+  color: $secondary-color-shade-light;
+  background-color: $dark-theme-background-color;
+  transition: 0.5s;
+}
+
+.theme-switch__icon--accent1 {
+  fill: $accent-color;
+  transition: 0.5s;
+}
+
+// .toolbar--login {
+//   display: flex;
+//   justify-content: flex-end;
+//   top: 175px;
+//   right: 15;
+//   position: absolute;
+
+//   @media screen and (min-width: $mobile) {
+//     padding-right: 20px;
+//   }
+
+//   @media screen and (min-width: $tablet) {
+//     padding-right: 32px;
+//   }
+
+//   @media screen and (min-width: $desktop) {
+//     padding-right: 71px;
+//   }
+// }

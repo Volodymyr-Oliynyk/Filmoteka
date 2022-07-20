@@ -1,0 +1,11 @@
+.main__container {
+  padding: 20px;
+  @media screen and (min-width: $tablet) {
+    padding: 60px 24px;
+  }
+}
+.gallery,
+.gallery--library {
+  display: flex;
+  flex-wrap: wrap;
+}

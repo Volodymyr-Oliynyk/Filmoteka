@@ -1,0 +1,98 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @extend %flex-center-style;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  opacity: 1;
+  transition: 0.8s opacity;
+  z-index: 1000;
+}
+
+.loaded_hiding .loader {
+  opacity: 0;
+}
+
+.loaded .loader {
+  display: none;
+}
+
+.loader-container {
+  position: relative;
+  @extend %flex-center-style;
+  // width: 100%;
+  animation: animate 0.9s linear infinite;
+}
+
+.loader-box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: $loader-box-background;
+  border-radius: 50%;
+  @media screen and (max-width: 500px) {
+    width: 70px;
+    height: 70px;
+}
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, rgba(170, 50, 2, 2));
+    background-size: 100px 180px;
+    background-repeat: no-repeat;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    @media screen and (max-width: 500px) {
+      width: 10px;
+      height: 10px;
+  }
+    background-color: $btn-color;
+    box-shadow: 0 0 10px $btn-color, 0 0 20px $btn-color, 0 0 30px $btn-color,
+      0 0 40px $btn-color, 0 0 50px $btn-color, 0 0 60px $btn-color,
+      0 0 70px $btn-color, 0 0 80px $btn-color, 0 0 90px $btn-color,
+      0 0 100px $btn-color;
+    border-radius: 50%;
+    z-index: 15;
+  }
+}
+
+.loader-box__elem {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  @media screen and (max-width: 500px) {
+    top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+}
+  border-radius: 50%;
+  background-color: $loader-box-element-background;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
